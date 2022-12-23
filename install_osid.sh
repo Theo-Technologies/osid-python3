@@ -16,7 +16,7 @@ echo "===Setup Hostname to osid==="
 bash -c "echo 'osid' > /etc/hostname"
 
 echo "===Cloning OSID Project==="
-git clone https://github.com/aaronnguyen/osid-python3.git
+git clone https://github.com/Theo-Technologies/osid-python3.git
 
 mkdir /var/osid
 mkdir /etc/osid
