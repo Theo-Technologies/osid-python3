@@ -5,8 +5,8 @@ import subprocess
 import configparser
 # Installed Libs
 import cherrypy
-
-
+from signal import signal, SIGTERM, SIGHUP, pause
+from rpi_lcd import LCD
 # Todo: too many config_parse blocks, create a function to easily call it
 
 class SDCardDupe(object):
@@ -139,6 +139,7 @@ class SDCardDupe(object):
         elif "%" in cat_output:
             current_line = cat_output.split("[")[-1]
             percentage = current_line.split(" of ")[0]
+            lcd.text(percentage,1)
             time_remains = current_line.split("written. ")[1].split(" remaining.")[0]
 
         # send the data as a json
